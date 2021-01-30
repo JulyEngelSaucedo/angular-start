@@ -11,12 +11,16 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import { MenuDeClientesComponent } from './menu-de-clientes/menu-de-clientes.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ListaDeClientesComponent } from './lista-de-clientes/lista-de-clientes.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioLoginComponent,
-    MenuDeClientesComponent
+    MenuDeClientesComponent,
+    ListaDeClientesComponent
+    
   ],
   imports: [
     BrowserModule,
