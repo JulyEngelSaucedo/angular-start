@@ -1,0 +1,28 @@
+<div class="body">
+  <div class="formulario-container">
+    <form class="form">
+      <div style="margin-top:10%">
+        <div class="input-container">
+          <mat-form-field appearance="outline" style="width:230px">
+            <mat-label>Usuário</mat-label>
+            <input matInput placeholder="Usuário"[(ngModel)]="usuario.Nome"  name="usuario">
+          </mat-form-field>
+        </div>
+        <div class="input-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+
+            <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.Senha" name="senha">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>            
+          </mat-form-field>
+          <div>
+            <button (click)="handleClick()" mat-button color="primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
