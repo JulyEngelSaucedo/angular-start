@@ -1,0 +1,44 @@
+<div style="margin-left: 40%;">
+  <form class="form">
+    <div style="margin-top:10%">
+      <div class="input-container">
+        <mat-form-field appearance="outline" style="width:230px">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="cliente.nome" name="Nome">
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="outline" style="width:230px">
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="CPF" [(ngModel)]="cliente.cpf" name="CPF" mask="000.000.000-00">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="cliente.dataNascimento" name="dataNascimento">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-label>Telefones</mat-label>
+        <button (click)="adicionarTelefone()" mat-icon-button color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <div *ngFor="let telefone of cliente.telefones; let i=index">
+        <mat-form-field appearance="outline" style="width:230px">
+          <mat-label>Telefone</mat-label>
+          <input matInput placeholder="Telefone"  name={{i}} [ngModel]="cliente.telefones[i]" id="wave{{telefone}}"  mask="(00)0000-00000" (change)="mudarValor(i,$event.target.value)">
+        </mat-form-field>
+      </div>
+   
+
+      <button (click)="voltar()" mat-button color="primary">Voltar</button>
+      <button style="margin-left:100px" (click)="criarCliente()" mat-button color="primary">Salvar</button>
+      
+    </div>
+  </form>
+</div>
