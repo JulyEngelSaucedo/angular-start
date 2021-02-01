@@ -1,0 +1,19 @@
+.login-container{
+  background-color: #87cefa;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.formulario-container{
+  background-color: white;
+  width: 480px;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.formulario-container .mat-form-field{
+  width:100%;
+}

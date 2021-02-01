@@ -1,0 +1,14 @@
+.container-edicao{
+  display: flex;
+  justify-content:center;
+}
+.form{
+  width:480px;
+  padding:16px 32px;
+  margin-top:16px;
+}
+.actions{
+  margin-top:16px;
+  display: flex;
+  justify-content:space-between;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../Models/Usuario';
-import { LoginServiceService } from '../login-service.service'
+import { Usuario } from '../../Models/Usuario';
+import { LoginServiceService } from '../../Services/login-service.service'
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-formulario-login',

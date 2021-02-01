@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+button {
+  margin-top: 16px;
+}
+.container-lista{
+  padding:16px;
+  margin:16px;
+}
+.lista-header{
+  display: flex;
+  justify-content: space-between;
+}

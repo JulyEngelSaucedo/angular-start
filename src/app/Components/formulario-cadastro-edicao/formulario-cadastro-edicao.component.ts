@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Cliente } from '../Models/Cliente'
+import { Cliente } from '../../Models/Cliente'
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DataService } from "../data.service";
-import { ClienteService } from "../cliente.service";
+import { DataService } from "../../Services/data.service";
+import { ClienteService } from "../../Services/cliente.service";
 
 @Component({
   selector: 'app-formulario-cadastro-edicao',
@@ -46,15 +46,16 @@ export class FormularioCadastroEdicaoComponent implements OnInit {
     if(this.editar){
       this.clienteService.editarCliente(this.cliente).subscribe(resultado =>{
 
-        alert("Usuário Editado com Sucesso!");
+        this.voltar();
       })
 
     }else{
     this.clienteService.salvarCliente(this.cliente).subscribe(resultado =>{
-      this.cliente = new Cliente();
-
-      alert("Usuário criado com Sucesso!");
-     });
+      this.voltar();
+     },error =>{
+       console.log(error);
+       alert(error.error.message);
+     })
     }
 
 
